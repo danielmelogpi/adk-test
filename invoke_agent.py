@@ -11,13 +11,12 @@ load_dotenv()
 
 # Configure Google AI API
 api_key = os.getenv("GOOGLE_API_KEY")
-if not api_key:
-    raise ValueError("GOOGLE_API_KEY not found in environment variables")
 genai.configure(api_key=api_key)
 
 def invoke_agent_with_instruction(instruction: str):
     # Create the agent
     agent = create_agent()
+    print(agent.instruction)
     
     # Set up session service
     session_service = InMemorySessionService()
@@ -46,7 +45,7 @@ def invoke_agent_with_instruction(instruction: str):
     events = runner.run(
         user_id="user123",
         session_id="session123",
-        new_message=content
+        new_message=content,
     )
 
     # Process the events
@@ -81,6 +80,8 @@ if __name__ == "__main__":
 
     The reply you received was:
     "{past_tool_result["response_received"]}"
+    
+    Execute the next step of your task and send the user any pending information if applicable
     """
 
     # Invoke the agent
