@@ -76,8 +76,6 @@ if __name__ == "__main__":
 
     # Inject this info into the agent's instruction
     instruction = f"""
-    You are a helpful agent who can answer user questions about the time and weather in a city.
-
     Previously, you used the tool `{past_tool_result["tool_name"]}` to send an email to {past_tool_result["input"]["to"]} asking:
     "{past_tool_result["input"]["body"]}"
 
