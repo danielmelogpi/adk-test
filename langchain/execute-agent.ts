@@ -4,7 +4,7 @@ import { SystemMessage, HumanMessage, AIMessage } from "@langchain/core/messages
 // Load API key from environment
 
 const model = new ChatGoogleGenerativeAI({
-  apiKey: '', // set this in your .env
+  apiKey: 'AIzaSyC8MF-k5CuJ1fA3uGxlnnNAcsNExVckYaA', // set this in your .env
   model: "gemini-2.0-flash",
   temperature: 0.8,
 });
